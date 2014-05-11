@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BridgeTech Solution</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <script type="text/javascript">
+      function hideall() {
+        $("#tab").hide();
+        $("#tab1").hide();
+        $("#tab2").hide();
+        $("#tab3").hide();
+        $("#tab4").hide();
+      }
+      $(document).ready(function() {
+
+        $("#icon1").mouseover(function() {
+          hideall();
+          $("#tab1").css("display", "block");
+        });
+
+        $("#icon2").mouseover(function() {
+          hideall();
+          $("#tab2").css("display", "block");
+        });
+
+        $("#icon3").mouseover(function() {
+          hideall();
+          $("#tab3").css("display", "block");
+        });
+
+        hideall();
+        $("#tab").show();
+
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <%= render "common/header" %>
+
+      <%= yield %>
+    </div>
+    <!--End of wrap-->
+    <%= render '/common/footer' %>
+
+  </body>
+</html>
